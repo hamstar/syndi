@@ -1,10 +1,10 @@
 from random import choice
 
 def rustle(phenny, input):
-    with open('/home/and/phenny/modules/verbs') as f:
+    with open('data/verbs') as f:
          l = f.readlines()
          verb = choice(l).strip('\n')
-    with open('/home/and/phenny/modules/nouns') as f:
+    with open('data/nouns') as f:
          l = f.readlines()
          noun = choice(l).strip('\n')
          
