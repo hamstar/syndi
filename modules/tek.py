@@ -6,13 +6,13 @@ def videos():
   return d.entries
 
 def find_in_videos(title):
-  vids = videos
-  found = false
+  vids = videos()
+  found = 0
   i = -1
-  while found == false:
+  while found == 0:
     i+= 1
     if vids[i].title.startswith(title):
-      found = true
+      found = 1
   if not vids[i].title.startswith(title):
     return false
   return vids[i]
@@ -26,12 +26,12 @@ def the_tek(ep):
 def tek(phenny, input):
   ep = input.group(2)
   if not ep:
-    return phenny.reply('Latest Tek is '+latest_tek.link)
+    return phenny.reply('Latest Tek is '+latest_tek().link)
   ep.strip("0")
   tek = the_tek(ep)
   if not tek:
-    return phenny.reply('Latest Tek is '+latest_tek.link)
-  return phenny.reply('Tek 00'+ep+': '+latest_tek.link)
+    return phenny.reply('Latest Tek is '+latest_tek().link)
+  return phenny.reply('Tek 00'+ep+': '+latest_tek().link)
 
 tek.commands = ['tek']
 tek.priority = 'high'
