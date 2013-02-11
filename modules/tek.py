@@ -1,6 +1,6 @@
 import feedparser
 
-def videos:
+def videos():
   """Returns the videos RSS from the site"""
   d = feedparser.parse('http://teksyndicate.com/rss/videos')
   return d.entries
@@ -17,7 +17,7 @@ def find_in_videos(title):
     return false
   return vids[i]
     
-def latest_tek:
+def latest_tek():
   return find_in_videos('The Tek')
 
 def the_tek(ep):
